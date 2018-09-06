@@ -1,0 +1,163 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{tabularx} 
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage{booktabs}
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Thai \textsc{Thien}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Info}
+
+\begin{tabular}{rl}
+    \textsc{Place and Date of Birth:} & Ho Chi Minh city  | 07 January 1995 \\
+    % \textsc{Location:}   & Ho Chi Minh city, Vietnam \\
+    \textsc{Phone:}     & +84 129 449 7847\\
+    \textsc{email:}     & \href{mailto:tthien@apcs.vn}{tthien@apcs.vn}\\
+    \textsc{linkedin:} & \href{https://www.linkedin.com/in/thaithien-1b6ba686/}{https://www.linkedin.com/in/thaithien-1b6ba686/}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+
+\begin{tabular}{r|p{11cm}}
+
+\textsc{Nov 2016 – May 2017} & Backend Developer at \textsc{ShareCarForAds.com} \\&\footnotesize{Software Engineering Capstone project. I work as backend developer on NodeJS.} \\\multicolumn{2}{c}{} \\
+ 
+\textsc{Oct 2015 – Sep 2016} & Android Developer at \textsc{Piksal JSC} \\&\footnotesize{Implement and maintaining mobile application. Worked on variable framework, including Native Android, Unity, React Native.}
+
+
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+% \textsc{July} 2008 & Master of Science in \textsc{Finance}, \textbf{Bocconi University}, Milan\\
+% & 110/110 \small\emph{summa cum laude} | Major: Quantitative Finance\\
+% & Thesis: ``Sublinear and Locally Sublinear Prices'' | \small Advisor: Prof. Erio \textsc{Castagnoli}\\
+% &\normalsize \\&\\
+
+\textsc{2013-2017} & Bachelor in \textsc{Computer Science},\\ &at \textbf{Vietnam National Universit Ho Chi Minh city - University of Science}, Vietnam\\
+& Major: Computer Science\\
+& Thesis: ``Deeplearning for Sentence-level Sentiment Analysis'' \\
+& \small Advisor: Dr. \textsc{Nghiem Quoc Minh}\\
+&\normalsize \\&\\
+
+
+\end{tabular} % end education
+
+
+
+\section{Project}
+\begin{tabularx}{\textwidth}{r|X}
+  \textsc{Aug 2017} &\textsc{CNN-TreeLSTM} \\
+  & A model proposed in Bachelor thesis. A Convolution layer is add before Tree layer in TreeLSTM. Result in 2\% increase in accuracy in Sentiment Analysis task on Stanford Sentiment Treebank comparing to TreeLSTM.\\
+& \textbf{Source code} on \href{https://github.com/ttpro1995/Tree_CNN_LSTM}{Github}\\
+\multicolumn{2}{c}{} \\
+
+  \textsc{Aug 2017}&\textsc{TreeLSTM in Pytorch:} \\
+ &Re-implement Tree-Structured Long Short-Term Memory Networks on Pytorch. \\
+& \textbf{Source code} on \href{https://github.com/ttpro1995/TreeLSTMSentiment}{Github}\\
+\multicolumn{2}{c}{} \\
+
+  \textsc{May 2016}&\textsc{Vuon thu ao}\\
+ &A set of flash card with augmented reality technology (AR). The application is built on Unity and Vuforia.\\
+&  \href{http://www.vuonthuao.com/}{Project page}\\
+\multicolumn{2}{c}{} \\
+
+ \textsc{Jan 2016}&\textsc{Freaking Sound}\\
+ &A mobile game built on Unity game engine where player hears a sound and picks correct picture of an object.\\
+&  \href{https://play.google.com/store/apps/details?id=com.piksalstudio.freakingsound}{Google Play} | \href{https://itunes.apple.com/us/app/freaking-sound/id1081268019?mt=8}{App Store}\\ \\ 
+\multicolumn{2}{c}{} \\
+
+\end{tabularx}
+
+%Section: Scholarships and additional info
+\section{Certificates}
+\begin{tabularx}{\textwidth}{r|X}
+\textsc{Aug 2017} &Applied Text Mining in Python by University of Michigan on Coursera \\
+\textsc{Aug 2017} &Introduction to Data Science in Python by University of Michigan on Coursera \\ 
+ \textsc{May 2017} &IELTS 7.0\\
+ \textsc{Aug 2016} &Machine Learning by Stanford University on Coursera \\
+
+\end{tabularx}
+
+
+%Section: Languages
+\section{Languages}
+\begin{tabular}{rl}
+ \textsc{Vietnamese:}&Mothertongue\\
+\textsc{English:}&Fluent\\
+% \textsc{French:}&Basic Knowledge\\
+\end{tabular}
+
+
+
+\end{document}
